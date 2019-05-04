@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+	int x, y;
+	float V, z = 2.5;
+	
+	printf("x: ");
+	scanf("%d",&x);
+	
+	printf("y: ");
+	scanf("%d",&y);
+	
+	switch(x)
+	{
+		case 1:
+			if(y > 1 && y < 5)
+				V = x*y*z;
+				
+			if(y >= 5)
+				V = x + y/z;
+			
+			else
+				V = x + y + z;
+				
+			break;	
+			
+		case 2:
+			if(y <= 5)
+				V = abs((x-y) / z);
+			
+			if(y > 5)
+				V = x - sqrt(y + z);
+				
+			else
+				V = x + y + z;
+				
+			break;
+					
+		default:
+			V = x + y + z; 
+	}
+	printf("V = %10.2f", V);
+	return 0;
+}
