@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+	float demand_charge, consumption, late_charge, gallon;
+	char ans;
+	
+	demand_charge = 35;
+	consumption = 0;
+	late_charge = 20;
+	gallon = 1.10;
+	
+	printf("Enter the amount of gallons consumed: ");
+	scanf("%f",&consumption);
+	
+	printf("\nIs your unpaid balance more than 0? Y/N\n");
+	scanf(" %c",&ans);
+			
+	if(ans == 'Y' || ans == 'y')
+	{
+		printf("Your total bill is %.2f.", demand_charge + consumption*gallon + late_charge);
+	}
+			
+	else if(ans == 'N' || ans == 'n')
+	{
+		printf("Your total bill is %.2f.", demand_charge + consumption*gallon);
+	}
+	
+	return 0;
+}
