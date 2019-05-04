@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+	int truthvalue = 1, x, y, sum;
+
+	while(truthvalue)
+	{
+		x = 0;
+		sum = 0;
+		
+		printf("Enter a number: ");
+		scanf("%d",&x);
+
+		if(x>0)
+		{
+			y = x;
+			while(x != 0)
+			{
+				sum += x;
+				x--;
+			}
+		printf("The sum of all whole numbers from 1 to %d is %d.\n",y,sum);	
+		}
+		
+		else
+		{
+			printf("Thank you!");
+			truthvalue = 0;
+		}
+	}
+	
+	return 0;
+}
