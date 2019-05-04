@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+	int x = 0, y = 1, z, ctr;
+	
+	printf("Fibonacci numbers:\n");
+	for(ctr = 0; ctr <21; ctr++)
+	{
+		z = x;
+		x = y;
+		y = y + z;
+		printf("%d,",z);
+	}
+	
+	z = x;
+	x = y;
+	y = y + z;
+	printf("%d",z);
+	
+	return 0;
+}
