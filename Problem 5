@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+	int ctr = 1;
+	
+	printf("Counting...\n");
+	while(ctr != 30)
+	{
+		printf("%d,",ctr);
+		if(ctr < 10)
+			ctr++;
+		else
+			ctr+= 2;
+	}
+	printf("%d",ctr);
+	
+	return 0;
+}
