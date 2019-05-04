@@ -1,0 +1,94 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <time.h>
+#include <conio.h>
+#include <math.h>
+
+int menu();
+void package(float *hours, int choice);
+void calculate(int choice, float hours);
+
+int main() 
+{
+  int choice;
+  float hours;
+  choice=menu();
+  package(&hours,choice);
+  calculate(choice,hours);
+  return 0;
+}
+
+int menu() 
+{
+  int choice;
+  printf(" Subscription Packages \n");
+  printf("---------------------------\n");
+  printf("  1. Package A for P995/mo 10hrs. Additional hours P20/hr\n");
+  printf("  2. Package B for P1495/mo 20hrs. Additional hours P10/hr\n");
+  printf("  3. Package C for P1995/mo Unlimited\n");
+  printf("\nChoice? ");
+  scanf("%i",&choice);
+  sleep(2);
+  system("cls");
+  if (choice == 1) printf("You have selected Package A\n\n");
+  if (choice == 2) printf("You have selected Package B\n\n");
+  if (choice == 3) printf("You have selected Package C\n\n");
+  return choice;
+}
+
+void package(float *hours, int choice) 
+{
+  if ((choice<1)||(choice>3)) 
+  {
+    char next;
+	while (next!='\n')
+	{
+		printf("Invalid Package\nTry Again\n");
+		scanf("%c",&next);
+		system("cls");
+		menu();
+	}
+  }
+  {
+  printf("How many hours were used? : ");
+  scanf("%f",hours);
+  sleep(2);
+  system("cls");
+  return;
+  }
+}
+
+void calculate(int choice, float hours) 
+{
+	//float fhours;
+	if (choice == 1) 
+	{
+		if (hours<=10)
+		{
+			printf("Your bill is PHP995\n");
+		}
+		else
+		{
+			//fhours=(hours*20)+995;
+			printf("Your bill is PHP%.2f",(hours*20)+995);
+		}
+	}
+	else if (choice == 2) 
+	{
+		if (hours<=20)
+		{
+			printf("Your bill is PHP1495\n");
+		}
+		else
+		{
+			//fhours=(hours*20)+1495;
+			printf("Your bill is PHP%.2f",(hours*20)+1495);
+		}
+	}
+	else
+	{
+		printf("Your bill is PHP1495");
+	}
+  return;
+}
